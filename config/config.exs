@@ -1,7 +1,6 @@
 use Mix.Config
 
 config :toy,
-  shlvl: "${SHLVL}",
   ecto_repos: [Toy.Repo]
 
 config :toy, ToyWeb.Endpoint,

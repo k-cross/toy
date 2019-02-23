@@ -27,6 +27,7 @@ defmodule Toy.MixProject do
   defp deps do
     [
       {:distillery, "~> 2.0", only: [:prod, :dev]},
+      {:toml, "~> 0.3", only: [:prod, :dev]},
       {:phoenix, "~> 1.4.1"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
