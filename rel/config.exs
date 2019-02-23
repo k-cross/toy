@@ -35,4 +35,7 @@ release :toy do
     :runtime_tools,
     toy: :permanent
   ]
+  set commands: [
+    migrations: "rel/commands/migrations.sh"
+  ]
 end
