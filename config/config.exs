@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :toy,
-  shlvl: System.get_env("SHLVL"),
+  shlvl: "${SHLVL}",
   ecto_repos: [Toy.Repo]
 
 config :toy, ToyWeb.Endpoint,
