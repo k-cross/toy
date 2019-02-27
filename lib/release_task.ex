@@ -3,9 +3,9 @@ defmodule Toy.ReleaseTask do
 
   defmacro __using__(start_apps: s_apps, load_apps: l_apps, repositories: repos) do
     quote do
-      @start_apps unquote s_apps
-      @load_apps unquote l_apps
-      @repos unquote repos
+      @start_apps unquote(s_apps)
+      @load_apps unquote(l_apps)
+      @repos unquote(repos)
 
       defp prepare do
         Enum.each(@load_apps, fn app ->
