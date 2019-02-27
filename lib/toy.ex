@@ -7,5 +7,5 @@ defmodule Toy do
   if it comes from the database, an external API or others.
   """
 
-  def get_shlvl, do: Application.get_env(:toy, :shlvl)
+  def code_beam_sf, do: Application.get_env(:toy, :code_beam_sf)
 end

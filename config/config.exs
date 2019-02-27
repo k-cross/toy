@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :toy,
-  shlvl: System.get_env("SHLVL"),
+  code_beam_sf: System.get_env("CODEBEAMSF"),
   ecto_repos: [Toy.Repo]
 
 config :toy, ToyWeb.Endpoint,
