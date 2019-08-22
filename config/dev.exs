@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :toy, ToyWeb.Endpoint,
   http: [port: 4000],

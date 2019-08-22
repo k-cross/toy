@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :toy, ToyWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
