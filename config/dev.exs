@@ -32,8 +32,10 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 config :toy, Toy.Repo,
-  username: "conjure",
-  password: "conjurer",
-  database: "conjure_dev",
+  username: "toy",
+  password: "toys",
+  database: "toy",
   hostname: "localhost",
   pool_size: 10
+
+import_config "release.exs"

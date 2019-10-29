@@ -8,4 +8,9 @@ config :toy, ToyWeb.Endpoint,
 
 config :logger, level: :info
 
-import_config "prod.secret.exs"
+config :toy, Toy.Repo,
+  username: "toy",
+  password: "toys",
+  database: "toy",
+  hostname: "localhost",
+  pool_size: 10

@@ -10,7 +10,21 @@ defmodule Toy.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: [
+        toy: [
+          include_erts: true,
+          strip_beams: true,
+          runtime_config_path: "config/release.exs",
+          # default: [:unix, :windows]
+          include_executables_for: [:unix],
+          steps: [:assemble],
+          applications: [
+            runtime_tools: :permanent,
+            toy: :permanent
+          ]
+        ]
+      ]
     ]
   end
 
