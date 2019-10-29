@@ -5,12 +5,26 @@ defmodule Toy.MixProject do
     [
       app: :toy,
       version: "0.1.0",
-      elixir: "~> 1.5",
+      elixir: "~> 1.9",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: [
+        toy: [
+          include_erts: true,
+          strip_beams: true,
+          runtime_config_path: "config/release.exs",
+          # default: [:unix, :windows]
+          include_executables_for: [:unix],
+          steps: [:assemble],
+          applications: [
+            runtime_tools: :permanent,
+            toy: :permanent
+          ]
+        ]
+      ]
     ]
   end
 
@@ -26,12 +40,11 @@ defmodule Toy.MixProject do
 
   defp deps do
     [
-      {:distillery, "~> 2.0", only: [:prod, :dev]},
-      {:phoenix, "~> 1.4.1"},
+      {:phoenix, "~> 1.4"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.0"},
-      {:postgrex, ">= 0.0.0"},
+      {:postgrex, "~> 0.1"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},

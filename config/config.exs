@@ -1,7 +1,6 @@
-use Mix.Config
+import Config
 
 config :toy,
-  code_beam_sf: System.get_env("CODEBEAMSF"),
   ecto_repos: [Toy.Repo]
 
 config :toy, ToyWeb.Endpoint,
